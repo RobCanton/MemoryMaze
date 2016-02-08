@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B049A9591C686E7C00138DD4 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049A9581C686E7C00138DD4 /* HealthBar.swift */; };
 		B09E91B41C66FEBB0099F6CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91B31C66FEBB0099F6CB /* AppDelegate.swift */; };
 		B09E91B61C66FEBB0099F6CB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B09E91B51C66FEBB0099F6CB /* GameScene.sks */; };
 		B09E91B81C66FEBB0099F6CB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91B71C66FEBB0099F6CB /* GameScene.swift */; };
@@ -14,9 +15,16 @@
 		B09E91BD1C66FEBB0099F6CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09E91BB1C66FEBB0099F6CB /* Main.storyboard */; };
 		B09E91BF1C66FEBB0099F6CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B09E91BE1C66FEBB0099F6CB /* Assets.xcassets */; };
 		B09E91C21C66FEBB0099F6CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B09E91C01C66FEBB0099F6CB /* LaunchScreen.storyboard */; };
+		B09E91CA1C66FECB0099F6CB /* Maze.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91C91C66FECB0099F6CB /* Maze.swift */; };
+		B09E91CC1C6703F90099F6CB /* cellNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91CB1C6703F90099F6CB /* cellNode.swift */; };
+		B09E91CE1C671B470099F6CB /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91CD1C671B470099F6CB /* Array2D.swift */; };
+		B0ED3EBD1C68491E0063CA06 /* Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED3EBC1C68491E0063CA06 /* Properties.swift */; };
+		B0ED3EC11C6851CE0063CA06 /* DepthFirstSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED3EC01C6851CE0063CA06 /* DepthFirstSearch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B049A9581C686E7C00138DD4 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
+		B049A95A1C68790D00138DD4 /* Heavitas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Heavitas.ttf; sourceTree = "<group>"; };
 		B09E91B01C66FEBB0099F6CB /* MemoryMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09E91B31C66FEBB0099F6CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B09E91B51C66FEBB0099F6CB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -26,6 +34,11 @@
 		B09E91BE1C66FEBB0099F6CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B09E91C11C66FEBB0099F6CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B09E91C31C66FEBB0099F6CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B09E91C91C66FECB0099F6CB /* Maze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Maze.swift; sourceTree = "<group>"; };
+		B09E91CB1C6703F90099F6CB /* cellNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cellNode.swift; sourceTree = "<group>"; };
+		B09E91CD1C671B470099F6CB /* Array2D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
+		B0ED3EBC1C68491E0063CA06 /* Properties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Properties.swift; sourceTree = "<group>"; };
+		B0ED3EC01C6851CE0063CA06 /* DepthFirstSearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthFirstSearch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +74,15 @@
 				B09E91B31C66FEBB0099F6CB /* AppDelegate.swift */,
 				B09E91B51C66FEBB0099F6CB /* GameScene.sks */,
 				B09E91B71C66FEBB0099F6CB /* GameScene.swift */,
+				B0ED3EBC1C68491E0063CA06 /* Properties.swift */,
+				B09E91CD1C671B470099F6CB /* Array2D.swift */,
+				B09E91CB1C6703F90099F6CB /* cellNode.swift */,
+				B049A9581C686E7C00138DD4 /* HealthBar.swift */,
+				B09E91C91C66FECB0099F6CB /* Maze.swift */,
 				B09E91B91C66FEBB0099F6CB /* GameViewController.swift */,
 				B09E91BB1C66FEBB0099F6CB /* Main.storyboard */,
+				B0ED3EC01C6851CE0063CA06 /* DepthFirstSearch.swift */,
+				B049A95A1C68790D00138DD4 /* Heavitas.ttf */,
 				B09E91BE1C66FEBB0099F6CB /* Assets.xcassets */,
 				B09E91C01C66FEBB0099F6CB /* LaunchScreen.storyboard */,
 				B09E91C31C66FEBB0099F6CB /* Info.plist */,
@@ -142,8 +162,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09E91CC1C6703F90099F6CB /* cellNode.swift in Sources */,
+				B049A9591C686E7C00138DD4 /* HealthBar.swift in Sources */,
+				B09E91CE1C671B470099F6CB /* Array2D.swift in Sources */,
+				B0ED3EBD1C68491E0063CA06 /* Properties.swift in Sources */,
 				B09E91B81C66FEBB0099F6CB /* GameScene.swift in Sources */,
+				B0ED3EC11C6851CE0063CA06 /* DepthFirstSearch.swift in Sources */,
 				B09E91BA1C66FEBB0099F6CB /* GameViewController.swift in Sources */,
+				B09E91CA1C66FECB0099F6CB /* Maze.swift in Sources */,
 				B09E91B41C66FEBB0099F6CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,6 +285,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcanton.MemoryMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -270,6 +297,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.rcanton.MemoryMaze;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -292,6 +320,7 @@
 				B09E91C81C66FEBB0099F6CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
