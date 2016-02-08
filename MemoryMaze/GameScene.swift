@@ -29,13 +29,18 @@ class GameScene: SKScene {
     var score = 0
     var scoreLabel = SKLabelNode(fontNamed: "Avenir Next Heavy")
     
-    var lives = 3
+    var lives = Properties.startingLives
     {
         didSet{
             healthBar.setLives(lives)
-            if lives == 0
+            if lives <= 0
             {
+                lives = 0
                 //startNode?.dead()
+            }
+            if lives >= Properties.maxLives
+            {
+                lives = Properties.maxLives
             }
         }
     }
@@ -99,6 +104,7 @@ class GameScene: SKScene {
                 print("No through path")
             }
         }
+        placeItems()
 
         startNode!.makeVisitable()
         fadeNodes()
@@ -280,6 +286,45 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    func getRandNode() -> cellNode?
+    {
+        var node:cellNode?
+        while node == nil
+        {
+            let randI = RandomInt(min: 0, max: numRows - 1)
+            let randJ = RandomInt(min: 0, max: numCols - 1)
+            let tempNode = nodes[randI, randJ] as! cellNode
+            if tempNode.type == Cell.Space
+            {
+                node = tempNode
+            }
+        }
+        return node
+    }
+    
+    func placeItems()
+    {
+        var rand = Double(arc4random() % 100) / 100.0;
+        if rand < Properties.heartChance
+        {
+            print("heart spawned!")
+            if let node = getRandNode()
+            {
+                node.placeHeart()
+            }
+            
+        }
+        rand = Double(arc4random() % 100) / 100.0;
+        if rand < Properties.lightChance
+        {
+            if let node = getRandNode()
+            {
+                node.placeLight()
+            }
+        }
+
+    }
 
     
     func setVisitableNodes(node:cellNode)
@@ -311,6 +356,19 @@ class GameScene: SKScene {
                 if node.type == Cell.Space
                 {
                     node.fade()
+                }
+            }
+        }
+    }
+    func resetNodeFade()
+    {
+        print("resetting node fade")
+        for i in 0...numRows-1 {
+            for j in 0...numCols-1 {
+                let node = nodes[i,j] as! cellNode
+                if node.type == Cell.Space
+                {
+                    node.resetFade()
                 }
             }
         }
@@ -357,6 +415,22 @@ class GameScene: SKScene {
         scoreLabel.runAction(growAction)
         scoreLabel.text = "\(score)"
         createGrid()
+        
+        if Properties.heartChance < Properties.maxHeartChance
+        {
+            let rand = Double(arc4random() % 100) / 10000.0;
+            Properties.heartChance += rand
+            print("increasing heart chance to: \(Properties.heartChance)")
+            
+        }
+        
+        if Properties.lightChance < Properties.maxLightChance
+        {
+            let rand = Double(arc4random() % 100) / 10000.0;
+            Properties.lightChance += rand
+            print("increasing light chance to: \(Properties.lightChance)")
+            
+        }
     }
     
     func nodeTouched(location:CGPoint)
@@ -369,8 +443,20 @@ class GameScene: SKScene {
                 {
                     cell.visit()
                     blueDude.position = cell.position
-                    
                     setVisitableNodes(cell)
+                    
+                    if cell.hasHeart && lives < Properties.maxLives
+                    {
+                        cell.removeHeart()
+                        lives++
+                    }
+                    
+                    if cell.hasLight
+                    {
+                        cell.removeLight()
+                        resetNodeFade()
+                    }
+                    
                     if cell.type == Cell.Goal
                     {
                         print("YOOOUUU WINN! 😇😇😇😇😇")

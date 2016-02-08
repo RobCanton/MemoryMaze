@@ -13,7 +13,15 @@ import SpriteKit
 class Properties
 {
 
-    static var fadeTime = 15.0
+    static var fadeTime = 10.0
+    
+    static let startingLives = 3
+    static let maxLives = 7
+    
+    static let maxHeartChance = 0.5
+    static let maxLightChance = 0.55
+    static var heartChance = 0.20
+    static var lightChance = 0.20
     
 
     static let colour_ui = SKColor(red: 25/255.0, green: 30/255.0, blue: 45/255.0, alpha: 1.0)

@@ -16,12 +16,15 @@ class cellNode: SKSpriteNode {
     var type:Cell!
     var visited = false
     var visitable = false
+    var hasHeart = false
+    var hasLight = false
     
     var top_node:cellNode?
     var rig_node:cellNode?
     var bot_node:cellNode?
     var lef_node:cellNode?
     var mask:SKSpriteNode!
+    
     
     func create(name: String, pos: CGPoint, size: CGSize, i:Int, j:Int)
     {
@@ -104,7 +107,17 @@ class cellNode: SKSpriteNode {
     func fade()
     {
         let changeColorAction = SKAction.colorizeWithColor(Properties.colour_wall, colorBlendFactor: 1.0, duration: Properties.fadeTime)
-        cell.runAction(changeColorAction)
+        cell.runAction(changeColorAction, withKey: "fade")
+    }
+    
+    func resetFade()
+    {
+        cell.removeActionForKey("fade")
+        if type == Cell.Space
+        {
+            cell.color = Properties.colour_space
+            fade()
+        }
     }
     
     func removeNodes()
@@ -114,6 +127,42 @@ class cellNode: SKSpriteNode {
         self.removeFromParent()
     }
     
+    func placeHeart()
+    {
+        hasHeart = true
+        let heart = SKSpriteNode(imageNamed: "heart")
+        heart.name = "heart"
+        heart.size = CGSize(width: 22.0, height: 22.0)
+        self.addChild(heart)
+    }
+    
+    func removeHeart()
+    {
+        hasHeart = false
+        if let node = childNodeWithName("heart")
+        {
+            node.removeFromParent()
+        }
+    }
+    
+    func placeLight()
+    {
+        hasLight = true
+        let light = SKSpriteNode(imageNamed: "light")
+        light.name = "light"
+        light.size = CGSize(width: 14.3, height: 22.0)
+        self.addChild(light)
+    }
+    
+    func removeLight()
+    {
+        hasLight = false
+        if let node = childNodeWithName("light")
+        {
+            node.removeFromParent()
+        }
+    }
+    
     
     func dead()
     {
@@ -121,6 +170,8 @@ class cellNode: SKSpriteNode {
         //cell.hidden = true
         mask.hidden = true
         cell.texture = SKTexture(imageNamed: "dead")
+        removeHeart()
+        removeLight()
     }
     
     

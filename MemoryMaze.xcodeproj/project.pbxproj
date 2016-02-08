@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B049A9591C686E7C00138DD4 /* HealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049A9581C686E7C00138DD4 /* HealthBar.swift */; };
+		B049A95C1C688F9E00138DD4 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B049A95B1C688F9E00138DD4 /* Helper.swift */; };
 		B09E91B41C66FEBB0099F6CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91B31C66FEBB0099F6CB /* AppDelegate.swift */; };
 		B09E91B61C66FEBB0099F6CB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B09E91B51C66FEBB0099F6CB /* GameScene.sks */; };
 		B09E91B81C66FEBB0099F6CB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09E91B71C66FEBB0099F6CB /* GameScene.swift */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		B049A9581C686E7C00138DD4 /* HealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HealthBar.swift; sourceTree = "<group>"; };
 		B049A95A1C68790D00138DD4 /* Heavitas.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Heavitas.ttf; sourceTree = "<group>"; };
+		B049A95B1C688F9E00138DD4 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		B09E91B01C66FEBB0099F6CB /* MemoryMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B09E91B31C66FEBB0099F6CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B09E91B51C66FEBB0099F6CB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B09E91BB1C66FEBB0099F6CB /* Main.storyboard */,
 				B0ED3EC01C6851CE0063CA06 /* DepthFirstSearch.swift */,
 				B049A95A1C68790D00138DD4 /* Heavitas.ttf */,
+				B049A95B1C688F9E00138DD4 /* Helper.swift */,
 				B09E91BE1C66FEBB0099F6CB /* Assets.xcassets */,
 				B09E91C01C66FEBB0099F6CB /* LaunchScreen.storyboard */,
 				B09E91C31C66FEBB0099F6CB /* Info.plist */,
@@ -169,6 +172,7 @@
 				B09E91B81C66FEBB0099F6CB /* GameScene.swift in Sources */,
 				B0ED3EC11C6851CE0063CA06 /* DepthFirstSearch.swift in Sources */,
 				B09E91BA1C66FEBB0099F6CB /* GameViewController.swift in Sources */,
+				B049A95C1C688F9E00138DD4 /* Helper.swift in Sources */,
 				B09E91CA1C66FECB0099F6CB /* Maze.swift in Sources */,
 				B09E91B41C66FEBB0099F6CB /* AppDelegate.swift in Sources */,
 			);
